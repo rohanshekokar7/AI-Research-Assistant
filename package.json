@@ -10,7 +10,7 @@
     "docker": "tsx src/run.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Rohan Shekokar",
   "license": "ISC",
   "description": "",
   "devDependencies": {

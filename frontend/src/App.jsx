@@ -35,7 +35,14 @@ function App() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to generate report');
+        let errorMessage = 'Failed to generate report';
+        try {
+          const errorData = await response.json();
+          if (errorData.message) errorMessage = errorData.message;
+        } catch (e) {
+          // Ignore parsing errors
+        }
+        throw new Error(errorMessage);
       }
 
       const data = await response.json();
